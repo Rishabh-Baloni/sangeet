@@ -1,104 +1,205 @@
-<h1 align="center">🎵 Spotify Clone</h1><h1 align="center">🎵 Realtime Spotify Clone</h1><h1 align="center">Realtime Spotify Application ✨</h1>
+<h1 align="center">🎵 Spotify Clone</h1><h1 align="center">🎵 Spotify Clone</h1><h1 align="center">🎵 Realtime Spotify Clone</h1><h1 align="center">Realtime Spotify Application ✨</h1>
 
 
 
 <p align="center">
 
-  <strong>A modern full-stack music streaming platform with real-time capabilities</strong>
+  <strong>A full-stack music streaming platform with real-time features</strong>
 
-</p><p align="center">![Demo App](/frontend/public/screenshot-for-readme.png)
-
-
-
-<p align="center">  <strong>A full-stack music streaming application with real-time features</strong>
-
-  <img src="https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react" alt="React" />
-
-  <img src="https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=node.js" alt="Node.js" /></p>[Watch Full Tutorial on Youtube](https://youtu.be/4sbklcQ0EXc)
-
-  <img src="https://img.shields.io/badge/MongoDB-8.8.0-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
-
-  <img src="https://img.shields.io/badge/Socket.IO-4.8.1-010101?style=for-the-badge&logo=socket.io" alt="Socket.IO" />
-
-  <img src="https://img.shields.io/badge/TypeScript-5.6.2-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
-
-</p><p align="center">About This Course:
+</p><p align="center">
 
 
 
-![Demo App](/frontend/public/screenshot-for-readme.png)  <img src="https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react" alt="React" />
+<p align="center">  <strong>A modern full-stack music streaming platform with real-time capabilities</strong>
 
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
 
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" /></p><p align="center">![Demo App](/frontend/public/screenshot-for-readme.png)
 
----  <img src="https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=node.js" alt="Node.js" />-   🎸 Listen to music, play next and previous songs
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
 
-
-
-## 📋 Table of Contents  <img src="https://img.shields.io/badge/MongoDB-8.8.0-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />-   🔈 Update the volume with a slider
-
-
-
-- [Features](#-features)  <img src="https://img.shields.io/badge/Socket.IO-4.8.1-010101?style=for-the-badge&logo=socket.io" alt="Socket.IO" />-   🎧 Admin dashboard to create albums and songs
-
-- [Tech Stack](#-tech-stack)
-
-- [Prerequisites](#-prerequisites)  <img src="https://img.shields.io/badge/TypeScript-5.6.2-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />-   💬 Real-time Chat App integrated into Spotify
-
-- [Installation](#-installation)
-
-- [Environment Variables](#-environment-variables)</p>-   👨🏼‍💼 Online/Offline status
-
-- [Running the Application](#-running-the-application)
-
-- [Seeding Sample Data](#-seeding-sample-data)-   👀 See what other users are listening to in real-time
-
-- [Project Structure](#-project-structure)
-
-- [API Endpoints](#-api-endpoints)![Demo App](/frontend/public/screenshot-for-readme.png)-   📊 Aggregate data for the analytics page
-
-- [Troubleshooting](#-troubleshooting)
-
-- [Contributing](#-contributing)-   🚀 And a lot more...
-
-- [License](#-license)
-
-<p align="center">
-
----
-
-  <a href="https://youtu.be/4sbklcQ0EXc">📺 Watch Full Tutorial on YouTube</a>### Setup .env file in _backend_ folder
-
-## ✨ Features
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 
 </p>
 
+<p align="center">  <strong>A full-stack music streaming application with real-time features</strong>
+
+![Demo App](/frontend/public/screenshot-for-readme.png)
+
+  <img src="https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react" alt="React" />
+
+---
+
+  <img src="https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=node.js" alt="Node.js" /></p>[Watch Full Tutorial on Youtube](https://youtu.be/4sbklcQ0EXc)
+
+## 📖 About
+
+  <img src="https://img.shields.io/badge/MongoDB-8.8.0-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
+
+A modern music streaming application inspired by Spotify. Stream music, create playlists, chat with friends in real-time, and enjoy a seamless listening experience. Built with the MERN stack and real-time WebSocket communication.
+
+  <img src="https://img.shields.io/badge/Socket.IO-4.8.1-010101?style=for-the-badge&logo=socket.io" alt="Socket.IO" />
+
+## ✨ Features
+
+  <img src="https://img.shields.io/badge/TypeScript-5.6.2-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
+
+- 🎵 Music playback with play, pause, skip, and shuffle
+
+- 🎧 Create and manage albums and songs (Admin)</p><p align="center">About This Course:
+
+- 💬 Real-time chat with other users
+
+- 👥 See what friends are listening to
+
+- 📊 Analytics dashboard for admins
+
+- 🔐 Secure authentication with Clerk![Demo App](/frontend/public/screenshot-for-readme.png)  <img src="https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react" alt="React" />
+
+- 📱 Responsive design for all devices
+
+
+
+## 🛠️ Tech Stack
+
+---  <img src="https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=node.js" alt="Node.js" />-   🎸 Listen to music, play next and previous songs
+
+**Frontend:** React, TypeScript, TailwindCSS, Zustand  
+
+**Backend:** Node.js, Express, MongoDB, Socket.IO  
+
+**Auth:** Clerk  
+
+**Storage:** Cloudinary## 📋 Table of Contents  <img src="https://img.shields.io/badge/MongoDB-8.8.0-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />-   🔈 Update the volume with a slider
+
+
+
+## 🚀 Getting Started
+
+
+
+### Prerequisites- [Features](#-features)  <img src="https://img.shields.io/badge/Socket.IO-4.8.1-010101?style=for-the-badge&logo=socket.io" alt="Socket.IO" />-   🎧 Admin dashboard to create albums and songs
+
+
+
+- Node.js (v16+)- [Tech Stack](#-tech-stack)
+
+- MongoDB Atlas account
+
+- Clerk account- [Prerequisites](#-prerequisites)  <img src="https://img.shields.io/badge/TypeScript-5.6.2-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />-   💬 Real-time Chat App integrated into Spotify
+
+- Cloudinary account
+
+- [Installation](#-installation)
+
+### Installation
+
+- [Environment Variables](#-environment-variables)</p>-   👨🏼‍💼 Online/Offline status
+
+1. **Install dependencies**
+
+- [Running the Application](#-running-the-application)
+
+```bash
+
+# Backend- [Seeding Sample Data](#-seeding-sample-data)-   👀 See what other users are listening to in real-time
+
+cd backend
+
+npm install- [Project Structure](#-project-structure)
+
+
+
+# Frontend- [API Endpoints](#-api-endpoints)![Demo App](/frontend/public/screenshot-for-readme.png)-   📊 Aggregate data for the analytics page
+
+cd frontend
+
+npm install- [Troubleshooting](#-troubleshooting)
+
+```
+
+- [Contributing](#-contributing)-   🚀 And a lot more...
+
+2. **Setup environment variables**
+
+- [License](#-license)
+
+Create `.env` in `backend` folder:
+
+```env<p align="center">
+
+PORT=5000
+
+MONGODB_URI=your_mongodb_uri---
+
+CLERK_PUBLISHABLE_KEY=your_clerk_key
+
+CLERK_SECRET_KEY=your_clerk_secret  <a href="https://youtu.be/4sbklcQ0EXc">📺 Watch Full Tutorial on YouTube</a>### Setup .env file in _backend_ folder
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+
+CLOUDINARY_API_KEY=your_api_key## ✨ Features
+
+CLOUDINARY_API_SECRET=your_api_secret
+
+ADMIN_EMAIL=your_email</p>
+
+```
+
 ### 🎵 Music Player
 
-- **Play/Pause/Skip** - Full control over music playback```bash
+Create `.env` in `frontend` folder:
 
-- **Volume Control** - Adjustable volume with slider
+```env- **Play/Pause/Skip** - Full control over music playback```bash
 
-- **Queue Management** - View and manage your music queue---PORT=...
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
 
-- **Progress Bar** - Seek to any position in the track
-
-- **Repeat & Shuffle** - Loop songs or shuffle your playlistMONGODB_URI=...
+```- **Volume Control** - Adjustable volume with slider
 
 
 
-### 👨‍💼 User Management## 📋 Table of ContentsADMIN_EMAIL=...
-
-- **Authentication** - Secure sign-up/sign-in with Clerk
-
-- **OAuth Integration** - Sign in with Google, GitHub, etc.NODE_ENV=...
-
-- **User Profiles** - View and manage your profile
-
-- **Admin Dashboard** - Special access for administrators- [Features](#-features)
+3. **Run the application**- **Queue Management** - View and manage your music queue---PORT=...
 
 
 
-### 💬 Real-time Features- [Tech Stack](#-tech-stack)CLOUDINARY_API_KEY=...
+```bash- **Progress Bar** - Seek to any position in the track
+
+# Backend (terminal 1)
+
+cd backend- **Repeat & Shuffle** - Loop songs or shuffle your playlistMONGODB_URI=...
+
+npm run dev
+
+
+
+# Frontend (terminal 2)
+
+cd frontend### 👨‍💼 User Management## 📋 Table of ContentsADMIN_EMAIL=...
+
+npm run dev
+
+```- **Authentication** - Secure sign-up/sign-in with Clerk
+
+
+
+Visit `http://localhost:3000`- **OAuth Integration** - Sign in with Google, GitHub, etc.NODE_ENV=...
+
+
+
+## 📝 License- **User Profiles** - View and manage your profile
+
+
+
+This project is licensed under the MIT License.- **Admin Dashboard** - Special access for administrators- [Features](#-features)
+
+
+
+---
+
+
+
+<p align="center">Built with ❤️ and 🎵</p>### 💬 Real-time Features- [Tech Stack](#-tech-stack)CLOUDINARY_API_KEY=...
+
 
 - **Live Chat** - Message other users in real-time
 
