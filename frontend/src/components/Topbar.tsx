@@ -1,5 +1,5 @@
 import { SignedOut, UserButton } from "@clerk/clerk-react";
-import { LayoutDashboardIcon } from "lucide-react";
+import { LayoutDashboardIcon, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import SignInOAuthButtons from "./SignInOAuthButtons";
 import { useAuthStore } from "@/stores/useAuthStore";
@@ -17,8 +17,8 @@ const Topbar = () => {
     '
 		>
 			<div className='flex gap-2 items-center'>
-				<img src='/sangeet.png' className='size-8' alt='Sangeet logo' />
-				Sangeet
+				<Headphones className='size-8 text-red-500' />
+				<span className='font-bold text-2xl uppercase tracking-wider' style={{ fontFamily: 'cursive' }}>SANGEET</span>
 			</div>
 			<div className='flex items-center gap-4'>
 				{isAdmin && (

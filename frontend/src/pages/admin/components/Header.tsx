@@ -1,12 +1,13 @@
 import { UserButton } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
+import { Headphones } from "lucide-react";
 
 const Header = () => {
 	return (
 		<div className='flex items-center justify-between'>
 			<div className='flex items-center gap-3 mb-8'>
 				<Link to='/' className='rounded-lg'>
-					<img src='/sangeet.png' className='size-10 text-black' />
+					<Headphones className='size-10 text-red-500' />
 				</Link>
 				<div>
 					<h1 className='text-3xl font-bold'>Music Manager</h1>

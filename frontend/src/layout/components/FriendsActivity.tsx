@@ -83,12 +83,12 @@ const LoginPrompt = () => (
 	<div className='h-full flex flex-col items-center justify-center p-6 text-center space-y-4'>
 		<div className='relative'>
 			<div
-				className='absolute -inset-1 bg-gradient-to-r from-emerald-500 to-sky-500 rounded-full blur-lg
+				className='absolute -inset-1 bg-gradient-to-r from-red-500 to-rose-500 rounded-full blur-lg
        opacity-75 animate-pulse'
 				aria-hidden='true'
 			/>
 			<div className='relative bg-zinc-900 rounded-full p-4'>
-				<HeadphonesIcon className='size-8 text-emerald-400' />
+				<HeadphonesIcon className='size-8 text-red-400' />
 			</div>
 		</div>
 

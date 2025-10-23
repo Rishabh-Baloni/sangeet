@@ -7,6 +7,7 @@ import ChatHeader from "./components/ChatHeader";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import MessageInput from "./components/MessageInput";
+import { Headphones } from "lucide-react";
 
 const formatTime = (date: string) => {
 	return new Date(date).toLocaleTimeString("en-US", {
@@ -92,7 +93,16 @@ export default ChatPage;
 
 const NoConversationPlaceholder = () => (
 	<div className='flex flex-col items-center justify-center h-full space-y-6'>
-		<img src='/sangeet.png' alt='Sangeet' className='size-16 animate-bounce' />
+		<div className='relative'>
+			<div
+				className='absolute -inset-1 bg-gradient-to-r from-red-500 to-rose-500 rounded-full blur-lg
+       opacity-75 animate-pulse'
+				aria-hidden='true'
+			/>
+			<div className='relative bg-zinc-900 rounded-full p-4'>
+				<Headphones className='size-16 text-red-400' />
+			</div>
+		</div>
 		<div className='text-center'>
 			<h3 className='text-zinc-300 text-lg font-medium mb-1'>No conversation selected</h3>
 			<p className='text-zinc-500 text-sm'>Choose a friend to start chatting</p>
