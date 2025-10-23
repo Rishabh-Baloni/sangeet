@@ -1,8 +1,8 @@
-<h1 align="center">🎵 Spotify Clone - Full-Stack Music Streaming Platform 🎵</h1>
+<h1 align="center">🎵 Sangeet - Full-Stack Music Streaming Platform 🎵</h1>
 
 ![Demo App](/frontend/public/screenshot-for-readme.png)
 
-**Spotify Clone** is a comprehensive music streaming web application that replicates the core Spotify experience with real-time social features. It's designed for music enthusiasts, developers, and students who want to build a modern streaming platform with chat capabilities.
+**Sangeet** is a comprehensive music streaming web application with real-time social features. It's designed for music enthusiasts, developers, and students who want to build a modern streaming platform with chat capabilities.
 
 ## ✨ Key Features
 
@@ -51,10 +51,10 @@
 
 ### Environment Setup
 
-1. **Clone the repository**
+1. **Download the repository**
 ```bash
-git clone https://github.com/Rishabh-Baloni/spotify-clone.git
-cd spotify-clone
+git clone https://github.com/Rishabh-Baloni/sangeet.git
+cd sangeet
 ```
 
 2. **Install dependencies**
@@ -124,7 +124,7 @@ Navigate to `http://localhost:3000`
 - And more...
 
 ## 🎨 **Design System**
-- Dark theme inspired by Spotify's aesthetics
+- Modern dark UI with elegant aesthetics
 - Gradient backgrounds and glassmorphism effects
 - Responsive grid layouts for albums and songs
 - Custom scrollbars and smooth animations

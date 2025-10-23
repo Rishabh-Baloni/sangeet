@@ -1,7 +1,7 @@
 {
-	"name": "backend",
+	"name": "sangeet-backend",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Music streaming platform backend",
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon src/index.js",
