@@ -28,6 +28,15 @@ const PORT = process.env.PORT;
 const httpServer = createServer(app);
 initializeSocket(httpServer);
 
+// UptimeRobot HEAD handlers BEFORE any middleware
+app.head('/', (req, res) => {
+	res.status(200).end();
+});
+
+app.head('/health', (req, res) => {
+	res.status(200).end();
+});
+
 app.use(
 	cors({
 		origin: process.env.NODE_ENV === "production" 
@@ -87,10 +96,6 @@ app.get('/', (req, res) => {
 	}
 });
 
-app.head('/', (req, res) => {
-	res.status(200).end();
-});
-
 app.post('/', (req, res) => sendHealthResponse(res));
 app.put('/', (req, res) => sendHealthResponse(res));
 app.delete('/', (req, res) => sendHealthResponse(res));
@@ -104,10 +109,6 @@ app.get('/health', (req, res) => {
 		timestamp: new Date().toISOString(),
 		uptime: process.uptime()
 	});
-});
-
-app.head('/health', (req, res) => {
-	res.status(200).end();
 });
 
 app.post('/health', (req, res) => {
