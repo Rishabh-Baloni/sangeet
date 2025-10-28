@@ -68,30 +68,49 @@ cron.schedule("0 * * * *", () => {
 	}
 });
 
-// Root endpoint for UptimeRobot monitoring (MUST be before other routes)
-app.all('/', (req, res) => {
+// Bulletproof UptimeRobot handlers - explicit method support
+const sendHealthResponse = (res) => {
+	res.status(200).json({ 
+		status: 'Sangeet Music Platform', 
+		timestamp: new Date().toISOString(),
+		version: '1.0.0',
+		uptime: process.uptime()
+	});
+};
+
+// Root endpoint - explicit methods for UptimeRobot
+app.get('/', (req, res) => {
 	if (process.env.NODE_ENV === "production") {
-		// In production, serve frontend for GET requests, API status for others
-		if (req.method === 'GET') {
-			res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
-		} else {
-			res.status(200).json({ 
-				status: 'Sangeet Music Platform', 
-				timestamp: new Date().toISOString(),
-				version: '1.0.0'
-			});
-		}
+		res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
 	} else {
-		res.status(200).json({ 
-			status: 'Sangeet Music Platform', 
-			timestamp: new Date().toISOString(),
-			version: '1.0.0'
-		});
+		sendHealthResponse(res);
 	}
 });
 
-// Health check endpoint for auto-wake and UptimeRobot
-app.all('/health', (req, res) => {
+app.head('/', (req, res) => {
+	res.status(200).end();
+});
+
+app.post('/', (req, res) => sendHealthResponse(res));
+app.put('/', (req, res) => sendHealthResponse(res));
+app.delete('/', (req, res) => sendHealthResponse(res));
+app.options('/', (req, res) => sendHealthResponse(res));
+app.patch('/', (req, res) => sendHealthResponse(res));
+
+// Health endpoint - explicit methods
+app.get('/health', (req, res) => {
+	res.status(200).json({ 
+		status: 'healthy', 
+		timestamp: new Date().toISOString(),
+		uptime: process.uptime()
+	});
+});
+
+app.head('/health', (req, res) => {
+	res.status(200).end();
+});
+
+app.post('/health', (req, res) => {
 	res.status(200).json({ 
 		status: 'healthy', 
 		timestamp: new Date().toISOString(),
