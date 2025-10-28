@@ -68,44 +68,7 @@ cron.schedule("0 * * * *", () => {
 	}
 });
 
-app.use("/api/users", userRoutes);
-app.use("/api/admin", adminRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/songs", songRoutes);
-app.use("/api/albums", albumRoutes);
-app.use("/api/stats", statRoutes);
-
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "../frontend/dist")));
-	// Catch-all handler for frontend routes (except API and health)
-	app.get("*", (req, res) => {
-		if (!req.path.startsWith('/api') && req.path !== '/health') {
-			res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
-		} else {
-			res.status(404).json({ error: 'Not found' });
-		}
-	});
-}
-
-// error handler
-app.use((err, req, res, next) => {
-	res.status(500).json({ message: process.env.NODE_ENV === "production" ? "Internal server error" : err.message });
-});
-
-// Configure timeouts for Render deployment
-httpServer.keepAliveTimeout = 120000; // 120 seconds
-httpServer.headersTimeout = 120000; // 120 seconds
-
-// Health check endpoint for auto-wake and UptimeRobot
-app.all('/health', (req, res) => {
-	res.status(200).json({ 
-		status: 'healthy', 
-		timestamp: new Date().toISOString(),
-		uptime: process.uptime()
-	});
-});
-
-// Root endpoint for UptimeRobot monitoring
+// Root endpoint for UptimeRobot monitoring (MUST be before other routes)
 app.all('/', (req, res) => {
 	if (process.env.NODE_ENV === "production") {
 		// In production, serve frontend for GET requests, API status for others
@@ -126,6 +89,41 @@ app.all('/', (req, res) => {
 		});
 	}
 });
+
+// Health check endpoint for auto-wake and UptimeRobot
+app.all('/health', (req, res) => {
+	res.status(200).json({ 
+		status: 'healthy', 
+		timestamp: new Date().toISOString(),
+		uptime: process.uptime()
+	});
+});
+
+app.use("/api/users", userRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/songs", songRoutes);
+app.use("/api/albums", albumRoutes);
+app.use("/api/stats", statRoutes);
+
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "../frontend/dist")));
+	// Catch-all handler for frontend routes (except root and health)
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+	});
+}
+
+// error handler
+app.use((err, req, res, next) => {
+	res.status(500).json({ message: process.env.NODE_ENV === "production" ? "Internal server error" : err.message });
+});
+
+// Configure timeouts for Render deployment
+httpServer.keepAliveTimeout = 120000; // 120 seconds
+httpServer.headersTimeout = 120000; // 120 seconds
+
+
 
 httpServer.listen(PORT, "0.0.0.0", () => {
 	console.log("Server is running on port " + PORT);
