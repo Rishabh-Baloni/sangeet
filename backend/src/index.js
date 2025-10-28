@@ -34,7 +34,7 @@ app.use(
 			? ["https://sangeet-himk.onrender.com", "http://localhost:3000", "https://sangeet-himk.onrender.com/"]
 			: "http://localhost:3000",
 		credentials: true,
-		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
 		allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 	})
 );
@@ -77,17 +77,13 @@ app.use("/api/stats", statRoutes);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "../frontend/dist")));
+	// Catch-all handler for frontend routes (except API and health)
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
-	});
-} else {
-	// Root route handler for monitoring services (development only)
-	app.all("/", (req, res) => {
-		res.status(200).json({ 
-			status: 'Sangeet Music Platform', 
-			timestamp: new Date().toISOString(),
-			version: '1.0.0'
-		});
+		if (!req.path.startsWith('/api') && req.path !== '/health') {
+			res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+		} else {
+			res.status(404).json({ error: 'Not found' });
+		}
 	});
 }
 
@@ -100,13 +96,35 @@ app.use((err, req, res, next) => {
 httpServer.keepAliveTimeout = 120000; // 120 seconds
 httpServer.headersTimeout = 120000; // 120 seconds
 
-// Health check endpoint for auto-wake
-app.get('/health', (req, res) => {
+// Health check endpoint for auto-wake and UptimeRobot
+app.all('/health', (req, res) => {
 	res.status(200).json({ 
 		status: 'healthy', 
 		timestamp: new Date().toISOString(),
 		uptime: process.uptime()
 	});
+});
+
+// Root endpoint for UptimeRobot monitoring
+app.all('/', (req, res) => {
+	if (process.env.NODE_ENV === "production") {
+		// In production, serve frontend for GET requests, API status for others
+		if (req.method === 'GET') {
+			res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+		} else {
+			res.status(200).json({ 
+				status: 'Sangeet Music Platform', 
+				timestamp: new Date().toISOString(),
+				version: '1.0.0'
+			});
+		}
+	} else {
+		res.status(200).json({ 
+			status: 'Sangeet Music Platform', 
+			timestamp: new Date().toISOString(),
+			version: '1.0.0'
+		});
+	}
 });
 
 httpServer.listen(PORT, "0.0.0.0", () => {
