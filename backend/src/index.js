@@ -31,9 +31,11 @@ initializeSocket(httpServer);
 app.use(
 	cors({
 		origin: process.env.NODE_ENV === "production" 
-			? ["https://sangeet-himk.onrender.com", "http://localhost:3000"]
+			? ["https://sangeet-himk.onrender.com", "http://localhost:3000", "https://sangeet-himk.onrender.com/"]
 			: "http://localhost:3000",
 		credentials: true,
+		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+		allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 	})
 );
 
