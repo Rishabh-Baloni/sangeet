@@ -75,6 +75,15 @@ app.use("/api/songs", songRoutes);
 app.use("/api/albums", albumRoutes);
 app.use("/api/stats", statRoutes);
 
+// Root route handler for monitoring services
+app.all("/", (req, res) => {
+	res.status(200).json({ 
+		status: 'Sangeet Music Platform', 
+		timestamp: new Date().toISOString(),
+		version: '1.0.0'
+	});
+});
+
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "../frontend/dist")));
 	app.get("*", (req, res) => {
