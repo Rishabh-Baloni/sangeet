@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "nodemon src/index.js",
 		"start": "node src/index.js",
+		"build": "npm install",
 		"seed:songs": "node src/seeds/songs.js",
 		"seed:albums": "node src/seeds/albums.js"
 	},
@@ -22,6 +23,7 @@
 		"express-fileupload": "^1.5.1",
 		"mongoose": "^8.8.0",
 		"node-cron": "^3.0.3",
+		"node-fetch": "^3.3.2",
 		"socket.io": "^4.8.1"
 	},
 	"devDependencies": {

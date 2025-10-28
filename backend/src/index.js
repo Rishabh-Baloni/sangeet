@@ -9,6 +9,7 @@ import { createServer } from "http";
 import cron from "node-cron";
 
 import { initializeSocket } from "./lib/socket.js";
+import { autoWake } from "./keepAlive.js";
 
 import { connectDB } from "./lib/db.js";
 import userRoutes from "./routes/user.route.js";
@@ -86,7 +87,19 @@ app.use((err, req, res, next) => {
 httpServer.keepAliveTimeout = 120000; // 120 seconds
 httpServer.headersTimeout = 120000; // 120 seconds
 
+// Health check endpoint for auto-wake
+app.get('/health', (req, res) => {
+	res.status(200).json({ 
+		status: 'healthy', 
+		timestamp: new Date().toISOString(),
+		uptime: process.uptime()
+	});
+});
+
 httpServer.listen(PORT, "0.0.0.0", () => {
 	console.log("Server is running on port " + PORT);
 	connectDB();
+	
+	// Initialize auto-wake system
+	autoWake();
 });
